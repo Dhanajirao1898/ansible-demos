@@ -1,0 +1,12 @@
+---
+- name: modify cronjob
+  hosts: all
+ 
+  tasks:
+  - name: remove cron job
+    cron:
+      name: VAR
+      env: yes
+      user: atish
+      job: /tmp/script/test.sh
+      insertbefore: PATH

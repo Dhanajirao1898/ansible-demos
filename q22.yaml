@@ -1,0 +1,16 @@
+---
+- name: user mgmt
+  hosts: all
+  become: true
+ 
+  tasks:
+  - name: new user
+    user:
+      name: "{{ item }}"
+      comment: new user adding
+      group: qa team
+      shell: /bin/bash
+    loop:
+     - raju
+     - sham
+     - babu 

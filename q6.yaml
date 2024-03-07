@@ -1,0 +1,17 @@
+
+---
+-name: file module
+ host: all
+ 
+ tasks:
+ - name: creating a file
+   file:
+     path: /tmp/newfile.txt
+     state: touch #absent
+     owner: atish
+     group: atish
+     mode: u=rwx,g=rw,o=r
+ - name: creating a directory
+   file:
+     path: /tmp/myfolder
+     state: directory

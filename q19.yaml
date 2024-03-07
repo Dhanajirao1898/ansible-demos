@@ -1,0 +1,19 @@
+---
+- name: installing & starting the nginx
+  hosts: all
+  become: true
+  vars:
+  - app: nginx #httpd
+ 
+  tasks:
+  - name: installing the nginx
+    yum:
+      name: "{{ app }}"
+      state: present 
+      tags: i-nginx
+ 
+  - name: started the nginx
+    service:
+      name: "{{ app }}"
+      state: started
+      tags: ss-nginx

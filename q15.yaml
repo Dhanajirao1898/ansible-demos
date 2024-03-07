@@ -1,0 +1,14 @@
+
+---
+ 
+- name: download file
+  hosts: all
+ 
+  tasks:
+  - name: down file
+    get_url:
+      url: https://www.python.org/downloads/
+      owner: atish
+      group: atish
+      mode: 0777
+      dest: /tmp/script/
